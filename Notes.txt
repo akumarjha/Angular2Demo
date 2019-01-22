@@ -1,0 +1,182 @@
+Why Angular 2
+=================================================
+--> Angular 2 is 5 times faster than AngularJs1
+--> Angular 2 supports across all devices like mobile,desktop,etc..
+--> In Angular 2, everything is component based Components are the building blocks of an Angular environment.
+--> More language choices
+	- ECMAScript 5
+	- ECMAScript 6 (called ES 2015)
+	- TypeScript angular is build using TypeScript
+	- Dart
+	- Pure Script
+	- Elm, etc..
+ECMAScript more info (https://en.wikipedia.org/wiki/ECMAScript)
+
+Setting Up Angular 2 in Visual Studio
+=====================================================
+Step 1:- Install Node.js & npm
+--> Node version 4.6.x or greater
+--> npm 3.x.x or greater
+--> To check the version of node installed: node-v
+--> To check the version of npm installed: npm-v
+--> To get the latest version of node (https://nodejs.org/en/download)
+Step 2:- Configure External Web Tools in visual studio
+	Tools-->Projects & Solutions-->External Web Tools
+Step 3:- Install TypeScrip (https://www.microsoft.com/en-us/download/details.aspx?id=55258)
+Step 4:- Download Prerequisite starter file from https://github.com/angular/quickstart
+step 5:- copy the "Starter" file to web project. (src,bs-config.json,package.json,tslint.json) include in project
+step 6:- restore package.json in visual studio it will create node_modules folder 
+step 7:- Run npm start from root folder of project (from C:\New folder\Pract\Angular2\Angular2Demo\Angular2Demo)
+
+Run Angular 2 in Visual Studio using F5
+=====================================================
+--> change <base href ="/"> to change <base href ="/src/">
+--> put / before node_modules in index.html
+--> Change npm path from node_modules/ to /node_modules/
+--> Type Script needs to be compiled to javaScript so we can add one configuration ("compileOnSave": true) in tsconfig.json
+
+===========================================
+A component in Angular is a class with Template & decorator
+-->Template
+-->Class
+-->Decorator
+-->Templates defines view HTML
+-->Class contains codes for view templates
+-->Decorator adds meta data 
+
+Angular Interpolation
+============================================
+In Angular Data Binding happen in three different ways
+--> form view to model
+-->from model to view
+-->both way
+
+Property Binding
+============================================
+
+Css Binding
+===========================================
+
+Style Binding
+===========================================
+
+Event Binding
+==========================================
+Interpolation
+Property Binding
+Attribute Binding
+Class Binding
+Style Binding
+
+Two Way Data Binding
+=========================================
+
+[(ngModel)] ()-- for event binding, [] property binding
+
+ngFor Model
+========================================
+
+using trackBy with ngFor
+========================================
+How to get the index of an item
+Identifying first & the last element in a collection
+Identifying even & odd element in a collection
+
+Pipes in Angular
+========================================
+we can use one pipe or pipe chain
+{{employee.annualSalary |currency:'USD':true:'1.3-3'}}
+{{employee.dateOfBirth | date :'fullDate' | uppercase}}
+
+Custom Angular Pipes
+=======================================
+Step 1: Create Custom Pipe
+Step 2: Declare the custom pipe in module
+step 3: use custom pipe just like any other built in angular pipe
+
+Nested Component
+Container Component 
+passing data from nested to container & vice-versa
+===================================================
+Angular Component Input properties (import Input event)
+==================================================
+
+Angular Output property (import Output & EventEmitter class)
+=================================================
+
+Angular Component Lifecycle Hooks
+=================================================
+There are 3 simple steps to use the Life Cycle Hooks
+Step 1 : Import the Life Cycle Hook interface. For example, to use ngOnInit() life cycle hook, import OnInit interface.
+
+import { OnInit } from '@angular/core';
+
+Step 2 : Make the component class implement the Life Cycle Hook interface, using the implements keyword as shown below. This step is optional, but good to have so you will get editor support and flags errors at compile time if you incorrectly implement the interface method or make any typographical errors.
+
+export class SimpleComponent implements OnInit { }
+
+Step 3 : Write the implementation code for the life cycle interface method. Each interface has a single hook method whose name is the interface name prefixed with ng.
+
+ngOnInit() {
+    console.log('OnInit Life Cycle Hook');
+}
+
+Angular Service
+=================================================
+Service is used to call Employee data it is mostly used
+to call http request we mostly use onInit angular hook
+
+Angular and ASP NET Web API
+==================================================
+Create Web api project create Get & GetByCode method 
+in web api project
+
+Calling Http Service using Angular
+==================================================
+Step 1: import HTTPModule Model in Angular root module
+step 2: modify Angular EmployeeService to issue Get request
+	using angular http-built in service
+Step 3 - Subscribe to the Observable returned by angular EmployeeService : EmployeeListComponent needs the employees data returned by the service.
+	 So in the ngOnInit() method of "employeeList.component.ts" use the subscribe method as shown below.
+
+ngOnInit() {
+    this._employeeService.getEmployees()
+        .subscribe(employeesData =] this.employees = employeesData);
+} 
+
+Http Error Handling in Angular
+==================================================
+use catch & Observable.throw(error);  method
+
+Using Bootstrap with Angular
+=================================================
+step 1: Install booststrap & jquery (npm install bootstrap@3 jquery --save)
+	Apply bootstrap to your html. we can also install bootstrap from nuget package manager.
+
+Routing in Angular
+================================================
+Routing means navigation from one component to another component
+step 1: <base href="/src/">
+step 2: Import RouterModule & Route then Define Routes.
+step 3: Point to keep in mind that more specific 
+
+
+
+want to implement http://localhost:57394/src/employee/Emp101 kind of routing
+
+return promises instead of Observable
+======================================
+step 1: import Promises import 'rxjs/add/operator/toPromise';
+
+Observable Unsubscibe
+=====================================
+
+
+
+
+
+
+
+
+
+
